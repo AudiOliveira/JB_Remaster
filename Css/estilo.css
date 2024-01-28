@@ -1,12 +1,12 @@
 /*--------------------------------------------- IMPORTAÇÃO DE FONTES. -------------------------------------------*/
 @font-face {
     font-family: 'open-sans';
-    src: url('./Fonts/OpenSans-Regular.ttf') format('truetype');
+    src: url('../Css/Fonts/OpenSans-Regular.ttf') format('truetype');
   }
   
   @font-face {
     font-family: 'Bebas Neue';
-    src: url('./Fonts/BebasNeue-regular.ttf') format('truetype');
+    src: url('../Css/Fonts/BebasNeue-Regular.ttf') format('truetype');
   }
 
 
