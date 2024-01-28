@@ -1,0 +1,501 @@
+/*--------------------------------------------- IMPORTAÇÃO DE FONTES. -------------------------------------------*/
+@font-face {
+    font-family: 'open-sans';
+    src: url('./Fonts/OpenSans-Regular.ttf') format('truetype');
+  }
+  
+  @font-face {
+    font-family: 'Bebas Neue';
+    src: url('./Fonts/BebasNeue-regular.ttf') format('truetype');
+  }
+
+
+/*--------------------------------------------- inicio CSS -------------------------------------------*/
+body {
+    font-family: 'Bebas Neue', 'open-sans';
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; /* Evita barras de rolagem horizontais */
+    background-color: #000000;
+    background-image: url("test1.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    overflow-y: hidden;
+        transition: background-image 1.0s ease-in-out; /* Adiciona uma transição de 0,5 segundos com efeito ease-in-out */
+        
+}
+
+/*--------------------------------------------- Configuração de backgrounds  -------------------------------------------*/
+@media (min-width: 1131px) {
+  body {
+      background-size: 130%;
+  background-position: unset;
+  }
+}
+@media (max-width: 1131px) {
+    body {
+        background-size: 150%;
+    
+    background-position: unset;
+    }
+}
+@media (max-width: 848px) {
+    body {
+        background-size: 250%;
+        overflow-y: scroll;
+    }
+}
+@media (max-width: 550px) {
+  body {
+      background-size: 350%;
+  }
+}
+@media (max-width: 440px) {
+  body {
+      background-size: 480%;
+  }
+}
+
+header {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 70px; /* Ajuste a altura conforme necessário */
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 999; /* Certifique-se de que o header esteja acima de outros elementos */
+}
+#pointer{
+  cursor: pointer;
+}
+
+  
+.show-nav {
+    display: none;
+    margin-right: 25px;
+  }
+
+  /*--------------------------------------------- MENU RESPONSIVO -----------------------------------------*/
+.responsive {
+    background: linear-gradient(to right, #ffffff 4px, transparent 4px);
+    background-color: #03501e;
+  }
+  
+  .responsive-nav {
+    transition: .5s;
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    inset: 0 0 0 0;
+    background-color: #003a14;
+    z-index: 9999;
+    width: 60%;
+    height: 130vh;
+    left: -100vw;
+    transition: all 0s;
+    max-height: 150%;
+    /* Defina a altura máxima desejada para a div */
+    overflow: auto;
+    /* Isso adicionará uma barra de rolagem quando o conteúdo exceder a altura máxima */
+  }
+  
+  .qualquer {
+    transition: .5s;
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    inset: 0 0 0 0;
+    background-color: #00000000;
+    z-index: -2;
+    width: 105%;
+    height: 130vh;
+    opacity: 0;
+    transition: all 1.5s;
+    max-height: 150%;
+    /* Defina a altura máxima desejada para a div */
+    overflow: auto;
+    /* Isso adicionará uma barra de rolagem quando o conteúdo exceder a altura máxima */
+    scrollbar-width: thin;
+  }
+  
+  .responsive-nav a {
+    text-decoration: none;
+    width: 100%;
+    text-indent: 10px;
+    color: #fff;
+    padding-top: 14px;
+    padding-bottom: 14px;
+    font-size: 18px;
+    transition: linear .3s;
+    margin-bottom: 2px;
+    margin-top: 2px;
+  }
+  
+  .responsive-nav a i{
+    color: white;
+    margin-right: 10px;
+  }
+  .responsive-nav a:hover {
+    color: #00511C;
+    background-color: #D1E2C8;
+  }
+  
+  .responsive-nav a:hover i{
+    color: #00511C;
+    transition: linear .1s;
+  }
+  .responsive-nav a {
+    font-family: 'open-sans';
+  }
+  
+  .black-bar {
+    width: 90%;
+    background-color: #ffffff;
+    border-radius: 20px;
+    height: 5px;
+    transition: .4s;
+  }
+  #btn_back {
+    display: none;
+  }
+  /*--------------------------------------------- RESOLUÇÃO MENU RESPONSIVO -----------------------------------------*/
+  @media (max-width: 1040px) {
+    .show-nav {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-evenly;
+      width: 35px;
+      height: 35px;
+      margin-left: .9em;
+      margin-bottom: 10px;
+      cursor: pointer;
+      z-index: 9999;
+    }
+    nav{
+        display: none;
+    }
+  
+    .rotate-0 {
+      rotate: 45deg;
+      translate: 0 7px;
+    }
+  
+    .rotate-1 {
+      display: none;
+    }
+  
+    .rotate-2 {
+      translate: 0 -7px;
+      rotate: -45deg;
+    }
+  
+    nav#nav {
+      display: none;
+    }
+  
+    .ativo1 {
+      opacity: 1;
+      background-color: #00000081;
+      z-index: 9990;
+    }
+  
+    .ativo {
+      left: 0;
+    }
+  
+    .desativado {
+      display: none;
+    }
+  }  
+
+  /*--------------------------------------------- LOGO E NAV. -------------------------------------------*/
+.logo {
+    float: left;
+    margin-right: 20px; /* Adiciona espaçamento entre a logo e os links da navegação */
+    margin-bottom: 0; /* Remove a margem inferior da logo */
+    margin-top: 25px; /* Remove a margem superior da logo */
+}
+.logo a {
+  display: inline-block;
+  transition: transform 0.2s ease-in-out;
+}
+
+.logo a:hover {
+  transform: scale(1.05);
+}
+
+nav {
+    float: right;
+    position: relative;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    position: relative; /* Adiciona posição relativa para que o submenu absoluto seja posicionado corretamente */
+}
+
+
+nav ul li {
+    display: inline-block;
+    margin-right: 60px; /* Adiciona espaçamento entre os links na navegação */
+    margin-top: 10px; /* Ajusta a margem superior dos links da navegação */
+    position: relative; /* Adiciona posição relativa para facilitar o posicionamento do indicador */
+}
+
+nav a {
+    text-decoration: none;
+    color: white; /* Cor dos links */
+    font-size: 25px; /* Ajuste o tamanho da fonte conforme necessário */
+    transition: color 0.3s; /* Adiciona transição de cor para um efeito suave ao passar o mouse */
+}
+
+nav a:hover {
+    color: #d8d4d4; /* Cor do texto ao passar o mouse ou na página ativa */
+}
+
+nav .indicator {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #26964e; /* Cor do indicador (branco) */
+    transform: scaleX(0); /* Inicialmente, o indicador está escondido */
+    transform-origin: bottom right; /* Começa a expandir da direita para a esquerda */
+    transition: transform 0.3s ease-out; /* Adiciona transição para um efeito suave */
+}
+
+nav a.active .indicator,
+nav a:hover .indicator {
+    transform: scaleX(1); /* Expande o indicador ao passar o mouse ou na página ativa */
+}
+
+/*--------------------------------------------- SUBMENU OU MENUDROP. -------------------------------------------*/
+.menu-drop {
+    position: relative;
+}
+
+.submenu {
+    display: none;
+    position: absolute;
+    top: 100%; /* Posiciona o submenu abaixo do link */
+    left: 0;
+    background-color: #00000099;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 150px; /* Ajuste a largura conforme necessário */
+    padding: 15px 0; /* Adiciona um espaço acima e abaixo dos itens do submenu */
+    z-index: 1; /* Certifica-se de que o submenu esteja acima de outros elementos */
+    border-radius: 10px;
+}
+
+.menu-drop:hover .submenu {
+    display: flex; /* Alterado para flex para ajustar a altura automaticamente */
+    flex-direction: column;
+}
+
+.submenu a {
+    font-size: 20px;
+    padding: 10px; /* Adicione padding aos itens do submenu */
+    color: white; /* Cor dos links do submenu */
+    white-space: nowrap;
+    width: 145%;
+    text-decoration: none;
+    transition: background-color 0.3s;
+    display: block; /* Faz com que o link se comporte como um bloco */
+}
+
+.submenu a:hover {
+    background-color: #555; /* Cor de fundo ao passar o mouse sobre os itens do submenu */
+}
+
+nav li {
+    position: relative;
+}
+
+/* Ajuste o layout do submenu */
+.submenu {
+    top: 100%; /* Isso coloca o submenu abaixo do item pai */
+    left: 0;
+}    
+
+/* Ajustes para melhorar a visualização do texto na parte superior */
+nav {
+    position: relative;
+    z-index: 1;
+}
+
+/* Ajustes visuais para a logo */
+.logo img {
+    width: 250px; /* Ajuste o tamanho conforme necessário */
+    height: auto; /* Garante a proporção da imagem */
+    margin-left: 20px;
+}
+
+/* Ajusta o tamanho do background conforme necessário */
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('') center center/cover fixed; /* Substitua pelo caminho real da sua imagem */
+    background-color: rgba(0, 0, 0, 0.1); /* Ajuste a opacidade conforme necessário */
+    pointer-events: none;
+    z-index: -1;
+}
+
+/* Estilos para a seção de destaque */
+.highlight {
+    margin-top: 60px;
+    margin-left: 35px;
+    margin-right: 35px;
+    text-align: left;
+    padding: 50px 0;
+    color: #fff;
+}
+
+.highlight p {
+    font-size: 50px;
+    margin-bottom: 20px;
+}
+
+.cta-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #ffd700;
+    color: #333;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 18px;
+}
+.cta-button:hover{
+transition: 0.5s; /* Adiciona transição de cor para um efeito suave ao passar o mouse */
+background-color: #af9500;
+}
+
+/*--------------------------------------------- CARDS. -------------------------------------------*/
+.cards {
+    display: flex;
+    flex-direction: row;
+    justify-content: center; /* Centraliza os cards horizontalmente */
+    align-items: flex-end; /* Alinha os cards na parte inferior */
+    width: 100%;
+    flex-wrap: wrap;
+    height: 25vh; /* Define a altura para ocupar toda a tela */
+    margin-top: auto; /* Ajusta automaticamente a margem superior */
+    margin-bottom: 35px;
+}
+#a {
+    text-decoration: none;
+  }
+
+  .card {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: 110px;
+    width: 183px;
+    margin: 15px;
+    margin-left: 50px;
+    margin-right: 50px;
+    margin-top: auto; /* Empurra o card para a parte inferior do contêiner */
+    background: #0000008f;
+    border-radius: 20px;
+    cursor: pointer;
+    box-shadow: 0px 7px 10px 0px rgba(0, 0, 0, 0.65);
+    transition: box-shadow 0.5s, margin 0.5s; /* Adiciona transição apenas para box-shadow e margin */
+    color: #fff;
+    font-family: 'open-sans';
+    letter-spacing: 1px;
+}
+
+.card:hover {
+    box-shadow: 0px 15px 15px 0px rgba(0, 0, 0, 0.65);
+    margin-bottom: 0px; /* Ajusta a margem apenas do card em hover */
+}
+
+.icon-card {
+    height: 80%;
+    min-width: 80px;
+    color: white;
+}
+
+.texto-card{
+    margin-left: 10px;
+}
+
+#icon-editais {
+    background: url("./Images/editais.png");
+    background-size: 90px;
+    background-position: -8px;
+}
+
+#icon-cursos {
+    background: url("./Images/cursos.png");
+    background-size: 90px;
+    background-position: -10px;
+}
+
+#icon-escola {
+    background: url("./Images/escola.png");
+    background-size: 90px;
+    background-position: -10px -7px;
+}
+
+#icon-notificacoes {
+    background: url("./Images/acesso.png");
+    background-size: 90px;
+    background-position: -5px;
+    background-repeat: no-repeat;
+}
+@media (max-width: 1131px) {
+    .card:hover {
+        box-shadow: none; /* Remove a sombra ao passar o mouse */
+        margin-bottom: 10px; /* Remove a margem inferior ao passar o mouse */
+    }
+}
+
+@media(min-width: 1282px) {
+    .card:hover {
+        box-shadow: 0px 15px 15px 0px rgba(0, 0, 0, 0.65);
+        margin-bottom: 0px;
+    }
+}
+
+
+/*--------------------------------------------- CONFIGURAÇÃO DOS BACKGROUNDS VIA CSS. -------------------------------------------*/
+body {
+  animation: changeBackground 90s infinite alternate; /* Adiciona animação de fundo */
+}
+
+@keyframes changeBackground {
+  0% {
+      background-image: url('./Images/test1.jpg');
+  }
+  16.666% {
+      background-image: url('./Images/test2.jpg');
+  }
+  33.333% {
+      background-image: url('./Images/test3.jpg');
+  }
+  50% {
+      background-image: url('./Images/test4.jpg');
+  }
+  66.666% {
+      background-image: url('./Images/test5.jpg');
+  }
+  83.333% {
+      background-image: url('./Images/test6.jpg');
+  }
+  100% {
+      background-image: url('./Images/test1.jpg');
+  }
+}

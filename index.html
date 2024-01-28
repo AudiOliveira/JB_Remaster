@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-------------------------------------- Links de CSS e FONTAWESOME ------------------------------------>
+    <link rel="stylesheet" href="./Css/estilo.css">
+    <link href="./Css/fontawesome/css/all.css" rel="stylesheet">
+    <title>Seu Site</title>
+    <!-------------------------------------- CONFIGURAÇÃO MENU RESPONSIVO (HAMBURGUER) ------------------------------------>
+    <script>
+    var elAtual = 0;
+    var el;
+    var windowWidth = window.innerWidth;
+    var showNav = () => {
+      document.getElementById("responsive-nav").classList.toggle("ativo");
+      document.getElementById("responsive-nav").style.transition = "0.5s";
+      document.getElementById("qualquer").classList.toggle("ativo1");
+      setTimeout(() => {
+        document.getElementById("responsive-nav").style.transition = "";
+      }, 500);
+      document
+        .getElementsByClassName("black-bar")[0]
+        .classList.toggle("rotate-0");
+      document
+        .getElementsByClassName("black-bar")[1]
+        .classList.toggle("rotate-1");
+      document
+        .getElementsByClassName("black-bar")[2]
+        .classList.toggle("rotate-2");
+    };
+    var showNav1 = () => {
+      document.getElementById("qualquer").classList.toggle("desativado");
+      setTimeout(() => {
+        qualquer.classList.remove('desativado');
+      }, 1000);
+    };
+  </script>
+</head>
+
+<body>
+    <header>
+      <div class="logo">
+        <a href="">
+            <img src="./Css/Images/logo.png" alt="José de Barcelos">
+        </a>
+    </div>
+    
+        <nav>
+            <ul>
+                <li><a href="#" class="active">Início<span class="indicator"></span></a></li>
+                <li class="menu-drop">
+                    <a id="pointer">Institucional  <img src="./Css/Images/down-arrow.png" style="width: 15px;"></a>
+                    <ul class="submenu">
+                        <li><a href="#">Nossa Escola</a></li>
+                        <li><a href="#">Origem</a></li>
+                        <li><a href="#">Regimento Escolar</a></li>
+                        <li><a href="#">Multimeios</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">Notícias</a></li>
+                <li><a href="#">Nossa Equipe</a></li>
+                <li><a href="#">Criadores</a></li>
+            </ul>
+        </nav>
+        <!------------------------------------- MENU RESPONSIVO ------------------------------------>
+    <div onClick="showNav()" class="show-nav">
+      <div class="black-bar"></div>
+      <div class="black-bar"></div>
+      <div class="black-bar"></div>
+    </div>
+  </div>
+    </header>
+
+
+<!------------------------------------- Frase Central ------------------------------------>
+    <section class="highlight">
+        <p>Seu futuro cada vez<br> 
+        mais proximo!</p>
+        <a href="#" class="cta-button">CONFIRA O EDITAL!</a>
+    </section>
+
+
+    <!------------------------------------- Cards ------------------------------------>
+    <div class="cards">
+        <a href="./Edital/index.html" id="a">
+          <div class="card">
+            <div class="icon-card" id="icon-editais"></div>
+            <p class="texto-card">EDITAIS</p>
+          </div>
+        </a>
+        <a href="./Cursos/index.html" id="a">
+          <div class="card">
+            <div class="icon-card" id="icon-cursos"></div>
+            <p class="texto-card">CURSOS TÉCNICOS</p>
+          </div>
+        </a>
+        <a href="./NossaEscola/index.html" id="a">
+          <div class="card">
+            <div class="icon-card" id="icon-escola"></div>
+            <p class="texto-card">NOSSA ESCOLA</p>
+          </div>
+        </a>
+        <a href="./Acesso_Login/index.html" id="a">
+          <div class="card">
+            <div class="icon-card" id="icon-notificacoes"></div>
+            <p class="texto-card" id="texto-notificacoes">ACESSO</p>
+          </div>
+        </a>
+      </div>
+
+     <!------------------------------------- LINKS MENU RESPONSIVO ------------------------------------>
+     <div class="qualquer" id="qualquer" onclick="showNav()"></div>
+     <nav class="responsive-nav" id="responsive-nav">
+       <a href="./index.html" class="responsive"><i class="fa-solid fa-house"></i>INÍCIO</a>
+       <a href="./Origem/index.html"><i class="fa-solid fa-timeline"></i>ORIGEM</a>
+       <a href="./Edital/index.html"><i class="fa-solid fa-file-invoice" ></i>REGIMENTO ESCOLAR</a>
+       <a href="./NossaEquipe/index.html"><i class="fa-solid fa-people-group" ></i>NOSSA EQUIPE</a>
+       <a href="./NossaEscola/index.html"><i class="fa-solid fa-graduation-cap" ></i>NOSSA ESCOLA</a>
+       <a href="./MultiMeios/index.html"><i class="fa-solid fa-book-open-reader" ></i>MULTIMEIOS</a>
+       <a href="./Criadores/index.html"><i class="fa-solid fa-users-gear" ></i>CRIADORES</a>
+       <a href="./Cursos/index.html" ><i class="fa-solid fa-brain" ></i>CURSOS TÉCNICOS</a>
+       <a href="./Acesso_Login/index.html"><i class="fa-solid fa-right-to-bracket"></i>ACESSO</a>
+     </nav>
+   </div>
+</body>
+</html>
+
+
+
+<!-- // Este é o codigo teste para a troca dos backgrounds, utilizado para versao beta1, porem depois de varios testes, 
+//percebi que não seria viável para todos os dispositivos moveis utilizar JS como base para essa função.
+
+
+//     document.addEventListener("DOMContentLoaded", function () {
+//     let backgrounds = ["url('test1.jpg')", "url('test2.jpg')", "url('test3.jpg')", "url('test4.jpg')", "url('test5.jpg')", "url('test6.jpg')"];
+//     let currentBackground = 0;
+
+//     function changeBackground() {
+//         document.body.style.backgroundImage = backgrounds[currentBackground];
+//         currentBackground = (currentBackground + 1) % backgrounds.length;
+//     }
+
+//     // Chama a função para a troca de fundo imediatamente
+//     changeBackground();
+
+//     // Adiciona um listener para redimensionamento de tela
+//     window.addEventListener('resize', function () {
+//         backgrounds = window.innerWidth <= 1131
+//             ? ["url('1.png')", "url('2.png')", "url('3.png')", "url('4.png')", "url('4.png')", "url('5.png')", "url('6.png')"]
+//             : ["url('test1.jpg')", "url('test2.jpg')", "url('test3.v')", "url('test4.jpg')", "url('test5.jpg')", "url('test6.jpg')"];
+    
+//         // Chama a função para a troca de fundo
+//         changeBackground();
+//     });
+
+//     // Chama a função para a troca de fundo a cada 10 segundos
+//     setInterval(changeBackground, 10000);
+// });
+ -->
